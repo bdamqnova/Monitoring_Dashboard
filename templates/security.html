@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Security Logs</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Security Logs</h1>
+
+    <div class="card">
+        <h2>Recent Security Events</h2>
+        <ul>
+            {% for log in logs %}
+            <li>
+                <strong>{{ log.source }}</strong><br>
+                {{ log.event }}<br>
+                Severity: {{ log.severity }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <a href="/">Back to menu</a>
+</body>
+</html>

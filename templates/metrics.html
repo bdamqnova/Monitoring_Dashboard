@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Metrics</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta http-equiv="refresh" content="5">
+</head>
+<body>
+    <h1>System Metrics</h1>
+
+    <div class="card">
+        <h2>CPU Usage</h2>
+        <p>{{ cpu }}%</p>
+        <progress value="{{ cpu }}" max="100"></progress>
+    </div>
+
+    <div class="card">
+        <h2>Memory Usage</h2>
+        <p>{{ memory }}%</p>
+        <progress value="{{ memory }}" max="100"></progress>
+    </div>
+
+    <div class="card">
+        <h2>Disk Usage</h2>
+        <p>{{ disk }}%</p>
+        <progress value="{{ disk }}" max="100"></progress>
+    </div>
+
+    <a href="/">Back to menu</a>
+</body>
+</html>

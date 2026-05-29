@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IDS / IPS Alerts</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>IDS / IPS Alerts</h1>
+
+    <div class="card">
+        <h2>Recent Suricata Alerts</h2>
+        <ul>
+            {% for alert in alerts %}
+            <li>
+                <strong>{{ alert.description }}</strong><br>
+                Interface: {{ alert.interface }}<br>
+                Protocol: {{ alert.protocol }}<br>
+                Source: {{ alert.source }}<br>
+                Destination: {{ alert.destination }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <a href="/">Back to menu</a>
+</body>
+</html>
