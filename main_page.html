@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+
+<div class="main">
+    <div class="navbar">
+        <div class="icon">
+            <img src="freshchoicelogo.png" alt="Fresh Choice Logo" class="logo">
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Fresh Choice<br><span>Supermarket</span></h1>
+        <p class="par">
+            Welcome to our online supermarket, where freshness comes first.
+        </p>
+    </div>
+
+    <div class="form"> 
+        <h2 id="formTitle">Join us!</h2>
+
+        <input type="email" placeholder="Enter email here">
+        <input type="password" placeholder="Enter password here">
+        <input type="password" id="confirmPassword" placeholder="Confirm password" style="display:none;">
+
+        <button class="btn" id="submitBtn">Sign in</button> 
+
+        <p class="link" id="toggleText">
+            Don't have an account?<br>
+            <a href="#" onclick="toggleForm()">Sign up here</a>
+        </p>
+
+        <p class="liw">Log in with</p>
+
+        <div class="icons">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+        </div>
+    </div>
+</div>
+
+<!-- Ionicons script ONLY -->
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+<!-- Your JavaScript -->
+<script>
+let isLogin = true;
+
+function toggleForm() {
+    const title = document.getElementById("formTitle");
+    const button = document.getElementById("submitBtn");
+    const toggleText = document.getElementById("toggleText");
+    const confirmPassword = document.getElementById("confirmPassword");
+
+    if (isLogin) {
+        title.textContent = "Create Account";
+        button.textContent = "Sign up";
+        confirmPassword.style.display = "block";
+        toggleText.innerHTML = `
+            Already have an account?<br>
+            <a href="#" onclick="toggleForm()">Sign in here</a>
+        `;
+    } else {
+        title.textContent = "Join us!";
+        button.textContent = "Sign in";
+        confirmPassword.style.display = "none";
+        toggleText.innerHTML = `
+            Don't have an account?<br>
+            <a href="#" onclick="toggleForm()">Sign up here</a>
+        `;
+    }
+
+    isLogin = !isLogin;
+}
+</script>
+
+</body>
+</html>
