@@ -1,0 +1,20 @@
+name: Docker Build Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t monitoring-dashboard .
+
+      - name: Test Docker image
+        run: docker run -d -p 5000:5000 monitoring-dashboard
